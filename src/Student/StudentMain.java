@@ -44,7 +44,7 @@ public class StudentMain
 	}
 	public static void main(String args[])
 	{
-		LoginFrame frame=new LoginFrame();
+		MainFrame frame=new MainFrame();
 		
 	}
 	
