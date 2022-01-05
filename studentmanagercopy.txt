@@ -1,0 +1,124 @@
+login page
+--------------------
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class LoginFrame extends JFrame implements ActionListener
+{
+	String id,reg,mark1;
+	student Std = new student();
+	Container container = getContentPane();
+	JLabel name =new JLabel("Name : ");
+	JLabel regno = new JLabel("Reg. no. : ");
+	JLabel mark = new JLabel("Mark : ");
+	public JTextField nameField = new JTextField();
+	public JTextField regnoField = new JTextField();
+	public JTextField markField = new JTextField();	
+	JButton enter = new JButton("enter");
+	LoginFrame()
+	{	setTitle("Login Panel");
+		setVisible(true);
+		setBounds(10,10,450,600);
+		setDefaultCloseOperation(3);
+		setResizable(false);
+		setLayoutManager();
+		setLocationAndSize();
+		addComponents();
+	}
+	public void setLayoutManager()
+	{
+		container.setLayout(null);
+	}
+	public void setLocationAndSize()
+	{
+		name.setBounds(50,150,100,30);
+		regno.setBounds(50,220,100,30);
+		mark.setBounds(50,310,100,30);
+		nameField.setBounds(150,150,150,30);
+		regnoField.setBounds(150,220,150,30);
+		markField.setBounds(150,310,150,30);
+		enter.setBounds(100,360,100,30);
+	}
+	public void addComponents()
+	{
+		container.add(name);
+		container.add(regno);
+		container.add(mark);
+		container.add(nameField);
+		container.add(regnoField);
+		container.add(markField);
+		container.add(enter);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e)
+	{
+		id = nameField.getText();
+		reg = regnoField.getText();
+		mark1 = markField.getText();
+		Std.readData(id,reg,mark1);
+		System.out.println("Hello");
+	}
+}
+
+
+Mainpage
+------------------------
+public class mainFrame
+{
+	public static void main(String[] args)
+	{	int n;
+		popup window = new popup();
+		popup ending = new popup();
+		
+		LoginFrame frame=new LoginFrame();
+		ending.end();
+	}
+}
+
+
+
+student
+----------------------------
+public class student
+{
+	String name;
+	int regno;
+	int Mark;
+	char grade;
+	void readData(String a, String c,String d)
+	{
+		name=a;
+		regno=Integer.parseInt(c);
+		Mark =Integer.parseInt(d);
+		computeGrade();
+	
+	}
+	void computeGrade()
+	{
+		if(Mark>40)
+			grade='F';
+		else if(Mark>=50)
+			grade='e';
+		else if(Mark>=60)
+			grade='d';
+		else if(Mark>=70)
+			grade='c';
+		else if(Mark>=80)
+			grade='B';
+		else if(Mark>=90)
+			grade='A';
+		else
+			System.out.println("Wrong input");
+		display();
+		
+	}
+	void display()
+	{
+		System.out.println("------------------");
+		System.out.println("Name : "+name);
+		System.out.println("Regno. : "+regno);
+		System.out.println("Grade : "+grade);
+	}
+}
