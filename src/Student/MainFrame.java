@@ -1,6 +1,7 @@
-package Student;
 import java.awt.*;
 import javax.swing.*;
+
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +18,7 @@ class MainFrame extends JFrame implements ActionListener
 	JButton loginButton = new JButton("Enter");
 	JButton viewButton = new JButton("View");
 	
-	LoginFrame()
+	TrailFrame()
 	{
 		setTitle("Student Entry");
 		setVisible(true);
@@ -41,9 +42,24 @@ class MainFrame extends JFrame implements ActionListener
 		regnoField.setBounds(150,220,150,30);
 		markField.setBounds(150,290,150,30);
 		loginButton.setBounds(20,370,150,30);
-		loginButton.addActionListener(this);
 		viewButton.setBounds(180,370,150,30);
-		viewButton.addActionListener(this);
+		
+		loginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nameData = nameField.getText();
+				String regData = regnoField.getText();
+				String markData = markField.getText();
+				std.readData(nameData, regData, markData);
+				
+				}
+		});;
+		
+		viewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Hii");
+				dispose();
+				}
+		});;
 		
 	}
 	public void addComponents()
@@ -57,18 +73,14 @@ class MainFrame extends JFrame implements ActionListener
 		container.add(loginButton);
 		container.add(viewButton);
 	}
+	/*
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
-			String nameData = nameField.getText();
-			String regData = regnoField.getText();
-			String markData = markField.getText();
-			std.readData(nameData, regData, markData);
-			dispose();
+			
 		
 	}
+	*/
 
 }
-
-
 
