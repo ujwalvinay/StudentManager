@@ -1,5 +1,4 @@
 package Student;
-
 public class StudentMain
 {
 	String name;
