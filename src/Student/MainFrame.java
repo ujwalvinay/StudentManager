@@ -1,3 +1,4 @@
+//creating the mainframe
 import java.awt.*;
 import javax.swing.*;
 
@@ -7,7 +8,7 @@ import java.awt.event.ActionListener;
 
 class MainFrame extends JFrame implements ActionListener
 {
-	StudentMain std = new StudentMain();
+	StudentTrail std = new StudentTrail();
 	Container container = getContentPane();
 	JLabel name =new JLabel("Name : ");
 	JLabel regno = new JLabel("Reg no. : ");
@@ -18,7 +19,7 @@ class MainFrame extends JFrame implements ActionListener
 	JButton loginButton = new JButton("Enter");
 	JButton viewButton = new JButton("View");
 	
-	TrailFrame()
+	MainFrame()
 	{
 		setTitle("Student Entry");
 		setVisible(true);
@@ -56,7 +57,6 @@ class MainFrame extends JFrame implements ActionListener
 		
 		viewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Hii");
 				dispose();
 				}
 		});;
@@ -73,14 +73,7 @@ class MainFrame extends JFrame implements ActionListener
 		container.add(loginButton);
 		container.add(viewButton);
 	}
-	/*
-	@Override
-	public void actionPerformed(ActionEvent e)
-	{
-			
-		
-	}
-	*/
 
 }
+
 
