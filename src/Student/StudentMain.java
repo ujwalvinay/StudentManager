@@ -1,5 +1,5 @@
 
-public class StudentMain
+public class StudentTrail
 {
 	String name;
 	int regno;
@@ -43,8 +43,8 @@ public class StudentMain
 	}
 	public static void main(String args[])
 	{
-		MainFrame frame=new MainFrame();
-		
+		TrailFrame frame=new TrailFrame();	
+		new viewFrame(); 
 	}
 	
 }
