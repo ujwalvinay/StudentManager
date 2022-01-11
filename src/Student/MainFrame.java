@@ -1,8 +1,6 @@
-//creating the mainframe
+                                          //creating the mainframe
 import java.awt.*;
 import javax.swing.*;
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -57,7 +55,8 @@ class MainFrame extends JFrame implements ActionListener
 		
 		viewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dispose();
+				new viewFrame();
+				
 				}
 		});;
 		
@@ -75,5 +74,3 @@ class MainFrame extends JFrame implements ActionListener
 	}
 
 }
-
-
