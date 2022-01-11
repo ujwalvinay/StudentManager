@@ -1,6 +1,7 @@
 
-public class StudentTrail
+public class StudentMain
 {
+	
 	String name;
 	int regno;
 	int Mark;
@@ -37,14 +38,13 @@ public class StudentTrail
 	void display()
 	{
 		System.out.println("------------------");
-		System.out.println("Name : "+name);
 		System.out.println("Regno. : "+regno);
 		System.out.println("Grade : "+grade);
 	}
 	public static void main(String args[])
 	{
-		TrailFrame frame=new TrailFrame();	
-		new viewFrame(); 
+		MainFrame frame=new MainFrame();	
+		 
 	}
 	
 }
