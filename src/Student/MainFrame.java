@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class MainFrame extends JFrame implements ActionListener
+class TrailFrame extends JFrame implements ActionListener
 {
 	StudentTrail std = new StudentTrail();
 	Container container = getContentPane();
@@ -17,7 +17,9 @@ class MainFrame extends JFrame implements ActionListener
 	JButton loginButton = new JButton("Enter");
 	JButton viewButton = new JButton("View");
 	
-	MainFrame()
+	String nameData,regData,markData;
+	
+	TrailFrame()
 	{
 		setTitle("Student Entry");
 		setVisible(true);
@@ -45,9 +47,9 @@ class MainFrame extends JFrame implements ActionListener
 		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String nameData = nameField.getText();
-				String regData = regnoField.getText();
-				String markData = markField.getText();
+				 nameData = nameField.getText();
+				 regData = regnoField.getText();
+				 markData = markField.getText();
 				std.readData(nameData, regData, markData);
 				
 				}
@@ -55,8 +57,8 @@ class MainFrame extends JFrame implements ActionListener
 		
 		viewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new viewFrame();
-				
+				viewFrame view = new viewFrame();
+				view.data(nameData, regData, markData);
 				}
 		});;
 		
